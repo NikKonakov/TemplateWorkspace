@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
-import {SafeAreaView} from 'react-native';
-import {ToDoForm} from "./ToDoForm.jsx";
-import {ToDoList} from "./ToDoList.jsx"; 
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native';
+import { ToDoForm } from "./ToDoForm.jsx";
+import { ToDoList } from "./ToDoList.jsx"; 
+import { Stack, Router, Link } from 'expo-router';
 
 
 export function App() {
@@ -13,13 +14,15 @@ export function App() {
   const addTask = (task) => {
     // Implement the logic to add a new task
     setTasks(prevTasks => [...prevTasks, task]);
-    console.log(task);
+    // console.log(task);
   };
   return (
-    <SafeAreaView>
-      <ToDoList tasks={tasks}></ToDoList>
-      <ToDoForm addTask={addTask}></ToDoForm>
-    </SafeAreaView>
+      <View>
+        
+        <SafeAreaView>
+          <ToDoList tasks={tasks}></ToDoList>
+          <ToDoForm addTask={addTask}></ToDoForm>
+        </SafeAreaView>
+      </View>
   );
 }
-
